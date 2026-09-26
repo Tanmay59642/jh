@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+<title>Campus2Community Jharkhand | झारखंड जन-समस्या समाधान पोर्टल</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#d8e4f1",
+            "on-primary-fixed": "#001d31",
+            "on-tertiary-container": "#ff743b",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed": "#00210e",
+            "on-tertiary-fixed": "#380d00",
+            "surface": "#f7f9ff",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#d8e4f1",
+            "surface-bright": "#f7f9ff",
+            "background": "#f7f9ff",
+            "on-primary-fixed-variant": "#254a67",
+            "on-background": "#121d26",
+            "primary": "#002238",
+            "tertiary-fixed-dim": "#ffb59a",
+            "on-secondary": "#ffffff",
+            "on-error": "#ffffff",
+            "outline-variant": "#c2c7ce",
+            "tertiary-fixed": "#ffdbcf",
+            "outline": "#72777e",
+            "primary-fixed": "#cce5ff",
+            "tertiary": "#3f1000",
+            "on-surface": "#121d26",
+            "primary-container": "#0f3854",
+            "error": "#ba1a1a",
+            "on-secondary-fixed-variant": "#00522b",
+            "primary-fixed-dim": "#a7caed",
+            "surface-container-low": "#ecf4ff",
+            "inverse-on-surface": "#e7f2ff",
+            "on-secondary-container": "#04723e",
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "on-surface-variant": "#42474d",
+            "tertiary-container": "#631e00",
+            "surface-container": "#e4effc",
+            "inverse-primary": "#a7caed",
+            "surface-tint": "#3e6280",
+            "secondary-fixed-dim": "#7ed99b",
+            "secondary": "#006d3b",
+            "surface-dim": "#d0dbe8",
+            "surface-container-high": "#dee9f6",
+            "inverse-surface": "#27323b",
+            "secondary-container": "#97f3b3",
+            "on-primary-container": "#7ea2c2",
+            "on-tertiary-fixed-variant": "#802a00",
+            "secondary-fixed": "#9af6b5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Noto Sans"],
+            "headline-sm": ["Noto Sans"],
+            "body-xl": ["Inter"],
+            "body-sm": ["Inter"],
+            "display-lg-mobile": ["Noto Sans"],
+            "headline-lg": ["Noto Sans"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "headline-xl-mobile": ["Noto Sans"],
+            "label-sm": ["Inter"],
+            "display-lg": ["Noto Sans"],
+            "headline-xl": ["Noto Sans"],
+            "headline-md": ["Noto Sans"],
+            "label-lg": ["Inter"],
+            "body-lg": ["Inter"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-xl": ["20px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "display-lg-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "display-lg": ["48px", { "lineHeight": "58px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl": ["36px", { "lineHeight": "46px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-lg": ["16px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Touch target enforcement */
+    .touch-target-min {
+      min-width: 48px;
+      min-height: 48px;
+    }
+    /* Smooth mobile scroll */
+    html {
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-fixed">
+<!-- Mobile View Constraint Wrapper (390px Optimized Canvas with Responsive Grace) -->
+<div class="max-w-[440px] mx-auto min-h-screen bg-surface-bright flex flex-col relative shadow-2xl border-x border-outline-variant overflow-x-hidden">
+<!-- 1. Top Government Utility Bar -->
+<header class="bg-primary text-on-primary text-label-sm font-label-sm px-gutter-mobile py-space-xs flex items-center justify-between border-b border-primary-container z-40">
+<div class="flex items-center gap-1.5 font-medium">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-secondary-fixed"></span>
+<span class="tracking-tight text-white/90">झारखंड सरकार | Govt. of Jharkhand</span>
+</div>
+<div class="flex items-center gap-2">
+<!-- Language Switcher Button -->
+<button aria-label="Switch Language to Hindi or English" class="touch-target-min px-2 py-1 rounded bg-primary-container text-on-primary text-xs font-semibold flex items-center gap-1 hover:bg-opacity-90 active:scale-95 transition-all" id="lang-btn">
+<span class="material-symbols-outlined text-[16px]">translate</span>
+<span>हिं / ENG</span>
+</button>
+<!-- High Contrast Toggle Button -->
+<button aria-label="Toggle High Contrast" class="touch-target-min w-8 h-8 rounded flex items-center justify-center bg-primary-container text-on-primary hover:bg-opacity-90 active:scale-95" id="contrast-btn">
+<span class="material-symbols-outlined text-[18px]">contrast</span>
+</button>
+</div>
+</header>
+<!-- 2. Main Mobile Header (Shared Component Anchors) -->
+<nav class="sticky top-0 z-30 bg-surface-container-lowest text-primary px-gutter-mobile py-2.5 flex items-center justify-between shadow-sm border-b border-outline-variant">
+<!-- Brand Logo -->
+<a aria-label="Campus2Community Jharkhand Home" class="flex items-center gap-2 touch-target-min py-1 focus:outline-2 focus:outline-primary" href="#home">
+<img alt="Campus2Community Portal Logo" class="h-10 w-auto object-contain rounded-md" src="https://lh3.googleusercontent.com/aida/AEtjO1U_Yy-0US0ZQ0BNmC5bQQ-Z-DI2WsjWqswuBtuGCYeqmWQ_TD1DKf8DsiS7ER9E_dlr119lcW3HjKnQYC14EOXjdwxr72asn-WG5LVsc72yBMWcnvsKYFmgxYoh6kOqWOYavm6zKxLiZtHb9QPkT8Ctssx68ffFMocJMLJW8xig6iRGunZb69LeFw3EWqUgRhkCHiej3oTv7tbRZkyYvCes-peoc9gX-0HvslxpqIshwEkbbtpRySCVk-uV"/>
+</a>
+<!-- Trailing Action Icons: Notifications & Prominent 3-Line Hamburger Menu -->
+<div class="flex items-center gap-1">
+<button aria-label="Civic Alerts and Notifications" class="touch-target-min w-11 h-11 flex items-center justify-center rounded-lg text-primary hover:bg-surface-container-high transition-colors relative">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+<span class="absolute top-2 right-2 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface-container-lowest"></span>
+</button>
+<!-- Mobile 3-line Hamburger Menu Button -->
+<button aria-expanded="false" aria-label="Open Navigation Menu" class="touch-target-min w-11 h-11 flex flex-col items-center justify-center gap-1.5 rounded-lg bg-surface-container-low text-primary border border-outline-variant hover:bg-surface-container-high active:scale-95 transition-all" id="menu-btn">
+<span class="w-6 h-0.5 bg-primary rounded-full transition-transform"></span>
+<span class="w-6 h-0.5 bg-primary rounded-full transition-opacity"></span>
+<span class="w-6 h-0.5 bg-primary rounded-full transition-transform"></span>
+</button>
+</div>
+</nav>
+<!-- Slide-out Drawer Menu (Accessible Mobile Nav) -->
+<div class="fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm hidden flex justify-end transition-opacity" id="drawer-menu">
+<div class="w-[82%] max-w-[320px] h-full bg-surface-container-lowest p-space-md flex flex-col shadow-2xl overflow-y-auto">
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Portal Navigation</span>
+<button aria-label="Close menu" class="touch-target-min w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high" id="close-menu-btn">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<ul class="flex flex-col gap-2 mt-4 font-label-lg text-label-lg">
+<li>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg bg-surface-container-low text-secondary font-bold" href="#home">
+<span class="material-symbols-outlined">home</span>
+<span>Home</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-on-surface hover:bg-surface-container-high" href="#report-section">
+<span class="material-symbols-outlined">assignment_add</span>
+<span>Report a Problem</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-on-surface hover:bg-surface-container-high" href="#track-section">
+<span class="material-symbols-outlined">travel_explore</span>
+<span>Track Problem</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-on-surface hover:bg-surface-container-high" href="#solutions-section">
+<span class="material-symbols-outlined">school</span>
+<span>How We Solve</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg text-on-surface hover:bg-surface-container-high" href="#about-section">
+<span class="material-symbols-outlined">info</span>
+<span>About Us</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto pt-6 border-t border-outline-variant flex flex-col gap-3">
+<div class="bg-secondary-fixed/30 p-3 rounded-lg border border-secondary text-on-secondary-fixed text-xs font-semibold">
+            Toll-Free Civic Helpline: 1800-345-6541
+          </div>
+<button class="w-full h-12 bg-primary text-on-primary font-label-lg text-label-lg rounded-lg font-bold flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">account_circle</span>
+<span>Login / Register</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 3. High-Contrast Hero Banner -->
+<section class="px-gutter-mobile pt-space-md pb-space-lg bg-surface-container-low border-b border-outline-variant" id="home">
+<!-- Badge of State Initiative -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed/50 border border-secondary text-on-secondary-fixed text-xs font-bold mb-3">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span>झारखंड जन-समस्या समाधान मंच</span>
+</div>
+<!-- Hero Heading -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight font-extrabold mb-2 leading-tight">
+        Your Problem. <br/>
+<span class="text-secondary">Our Community.</span> <br/>
+        Better Jharkhand.
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md leading-relaxed">
+        Connecting rural citizens, urban wards, and student innovators across 24 districts for fast civic resolution.
+      </p>
+<!-- Large Full-Width Dual Action Buttons -->
+<div class="flex flex-col gap-3 mb-space-md">
+<a class="w-full min-h-[52px] bg-secondary text-on-secondary font-label-lg text-label-lg font-bold rounded-lg flex items-center justify-center gap-2 shadow-md hover:bg-opacity-95 active:scale-[0.99] transition-all border-2 border-secondary focus:ring-4 focus:ring-secondary-fixed" href="#report-section">
+<span class="material-symbols-outlined text-2xl">campaign</span>
+<span>Report a Problem (समस्या दर्ज करें)</span>
+</a>
+<a class="w-full min-h-[52px] bg-primary text-on-primary font-label-lg text-label-lg font-bold rounded-lg flex items-center justify-center gap-2 shadow-md hover:bg-opacity-95 active:scale-[0.99] transition-all border-2 border-primary focus:ring-4 focus:ring-primary-fixed" href="#track-section">
+<span class="material-symbols-outlined text-2xl">fact_check</span>
+<span>Track My Problem (स्थिति जांचें)</span>
+</a>
+</div>
+<!-- Voice-Friendly Search Bar -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-2xl pointer-events-none">search</span>
+<input aria-label="Search problems or website functions" class="w-full h-[52px] pl-12 pr-14 rounded-lg bg-surface-container-lowest border-2 border-outline text-on-surface font-body-md text-body-md placeholder:text-outline focus:border-primary focus:ring-4 focus:ring-primary-fixed/50 transition-all" placeholder="Search problems or website functions..." type="text"/>
+<button class="absolute right-2 touch-target-min w-10 h-10 flex items-center justify-center rounded-md bg-surface-container-high text-primary hover:bg-surface-variant active:scale-95" title="Voice Search (आवाज़ से खोजें)">
+<span class="material-symbols-outlined text-2xl text-secondary">mic</span>
+</button>
+</div>
+</section>
+<!-- 4. Simple Problem Categories (Optimized 2-Column High-Contrast Touch Grid) -->
+<section class="px-gutter-mobile py-space-lg bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Problem Categories</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tap category to raise or browse</p>
+</div>
+<span class="text-xs font-bold text-secondary bg-secondary-fixed/40 px-2.5 py-1 rounded-full border border-secondary">
+          8 Sectors
+        </span>
+</div>
+<!-- 2-Column High Contrast Grid -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Water -->
+<button class="touch-target-min p-3 rounded-xl border-2 border-outline-variant bg-surface hover:border-primary active:bg-surface-container-high flex flex-col items-start gap-2 text-left transition-all group">
+<div class="w-11 h-11 rounded-lg bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">water_drop</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-secondary">Water Supply</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">जल एवं पाइपलाइन</div>
+</div>
+</button>
+<!-- Roads -->
+<button class="touch-target-min p-3 rounded-xl border-2 border-outline-variant bg-surface hover:border-primary active:bg-surface-container-high flex flex-col items-start gap-2 text-left transition-all group">
+<div class="w-11 h-11 rounded-lg bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">add_road</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-secondary">Roads &amp; Lights</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">सड़क एवं स्ट्रीट लाइट</div>
+</div>
+</button>
+<!-- Waste -->
+<button class="touch-target-min p-3 rounded-xl border-2 border-outline-variant bg-surface hover:border-primary active:bg-surface-container-high flex flex-col items-start gap-2 text-left transition-all group">
+<div class="w-11 h-11 rounded-lg bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">delete_sweep</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-secondary">Waste / Sanitation</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">कचरा प्रबंधन</div>
+</div>
+</button>
+<!-- Agriculture -->
+<button class="touch-target-min p-3 rounded-xl border-2 border-outline-variant bg-surface hover:border-primary active:bg-surface-container-high flex flex-col items-start gap-2 text-left transition-all group">
+<div class="w-11 h-11 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-fixed group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">agriculture</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-secondary">Agriculture</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">कृषि व नहर समाधान</div>
+</div>
+</button>
+<!-- NGO & Social -->
+<button class="touch-target-min p-3 rounded-xl border-2 border-outline-variant bg-surface hover:border-primary active:bg-surface-container-high flex flex-col items-start gap-2 text-left transition-all group">
+<div class="w-11 h-11 rounded-lg bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">diversity_3</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-secondary">NGO &amp; Social</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">सामाजिक कल्याण</div>
+</div>
+</button>
+<!-- Tech -->
+<button class="touch-target-min p-3 rounded-xl border-2 border-outline-variant bg-surface hover:border-primary active:bg-surface-container-high flex flex-col items-start gap-2 text-left transition-all group">
+<div class="w-11 h-11 rounded-lg bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">memory</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-secondary">Tech &amp; Digital</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">डिजिटल सुविधा</div>
+</div>
+</button>
+<!-- Environment -->
+<button class="touch-target-min p-3 rounded-xl border-2 border-outline-variant bg-surface hover:border-primary active:bg-surface-container-high flex flex-col items-start gap-2 text-left transition-all group">
+<div class="w-11 h-11 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-fixed group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">forest</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-secondary">Environment</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">पर्यावरण संरक्षण</div>
+</div>
+</button>
+<!-- Education -->
+<button class="touch-target-min p-3 rounded-xl border-2 border-outline-variant bg-surface hover:border-primary active:bg-surface-container-high flex flex-col items-start gap-2 text-left transition-all group">
+<div class="w-11 h-11 rounded-lg bg-primary-fixed flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">school</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-secondary">Education</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">स्कूल व छात्रवृत्ति</div>
+</div>
+</button>
+</div>
+</section>
+<!-- 5. Quick Mobile Complaint Registration Wizard -->
+<section class="px-gutter-mobile py-space-lg bg-surface border-b border-outline-variant" id="report-section">
+<!-- Header with Step Indicator -->
+<div class="mb-space-md">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">Fast Citizen Filing</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold">New Grievance Wizard</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Step-by-step submission with offline resilience.</p>
+</div>
+<!-- Step Progress Bar -->
+<div class="grid grid-cols-4 gap-1.5 mb-space-lg">
+<div class="h-2 rounded-full bg-secondary"></div>
+<div class="h-2 rounded-full bg-secondary"></div>
+<div class="h-2 rounded-full bg-secondary"></div>
+<div class="h-2 rounded-full bg-outline-variant"></div>
+</div>
+<!-- The Multi-Step Card -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-outline-variant shadow-sm p-space-md space-y-5">
+<!-- Step 1: Details & Category -->
+<div class="border-b border-outline-variant pb-4">
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary text-xs flex items-center justify-center">1</span>
+<span>Category &amp; Details</span>
+</label>
+<span class="text-xs text-secondary font-bold">Required</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">समस्या का संक्षिप्त विवरण लिखें</p>
+<div class="space-y-3">
+<select class="w-full h-[52px] rounded-lg border-2 border-outline bg-surface-container-lowest px-3 font-body-md text-body-md text-on-surface focus:border-primary">
+<option selected="" value="">Select Problem Category (श्रेणी चुनें)</option>
+<option value="water">Drinking Water / Handpump Breakdown</option>
+<option value="roads">Road Damage / Potholes</option>
+<option value="electricity">Rural Solar &amp; Power Grid Issue</option>
+<option value="sanitation">Waste Disposal &amp; Drain Block</option>
+</select>
+<textarea class="w-full p-3 rounded-lg border-2 border-outline bg-surface-container-lowest font-body-md text-body-md text-on-surface focus:border-primary resize-none placeholder:text-outline" placeholder="Describe what happened, nearby landmark, or severity..." rows="3"></textarea>
+</div>
+</div>
+<!-- Step 2: District & Village Selection -->
+<div class="border-b border-outline-variant pb-4">
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary text-xs flex items-center justify-center">2</span>
+<span>District &amp; Village</span>
+</label>
+<span class="text-xs text-secondary font-bold">24 Districts</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">जिला एवं ग्राम पंचायत चुनें</p>
+<div class="grid grid-cols-2 gap-2">
+<select class="h-[52px] rounded-lg border-2 border-outline bg-surface-container-lowest px-3 font-body-md text-body-md text-on-surface focus:border-primary">
+<option value="">District</option>
+<option selected="" value="ranchi">Ranchi (राँची)</option>
+<option value="dhanbad">Dhanbad</option>
+<option value="bokaro">Bokaro</option>
+<option value="hazaribagh">Hazaribagh</option>
+<option value="dumka">Dumka</option>
+</select>
+<select class="h-[52px] rounded-lg border-2 border-outline bg-surface-container-lowest px-3 font-body-md text-body-md text-on-surface focus:border-primary">
+<option value="">Block / Block</option>
+<option selected="" value="kanke">Kanke Block</option>
+<option value="namkum">Namkum</option>
+<option value="ormanjhi">Ormanjhi</option>
+<option value="ranchi-sadar">Sadar</option>
+</select>
+</div>
+</div>
+<!-- Step 3: Interactive Location & GPS Map -->
+<div class="border-b border-outline-variant pb-4">
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary text-xs flex items-center justify-center">3</span>
+<span>GPS Geotagging</span>
+</label>
+<span class="text-xs bg-secondary-fixed/50 text-secondary font-bold px-2 py-0.5 rounded">High Accuracy</span>
+</div>
+<!-- GPS Click Button -->
+<button class="w-full min-h-[48px] rounded-lg bg-surface-container-high border-2 border-primary text-primary font-bold flex items-center justify-center gap-2 hover:bg-surface-container active:scale-[0.99] mb-3 transition-all">
+<span class="material-symbols-outlined text-secondary">my_location</span>
+<span>Use My GPS Location (वर्तमान स्थान लें)</span>
+</button>
+<!-- Interactive Map Container Card -->
+<div class="relative w-full h-44 rounded-lg overflow-hidden border-2 border-outline-variant bg-surface-dim">
+<img class="w-full h-full object-cover" data-alt="A clean topographic vector style map of Jharkhand rural district with marked pin in deep navy blue and forest green civic colors. The map highlights village roads, river boundaries, and municipal zones with radical legibility and crisp high-contrast lines designed for accessible government interfaces." data-location="Ranchi" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_MaUycT2VVQxc8_xRdmvk_7knInf3er7RPHdjcQ77xNCVzYHUg6Z73oQfYPFznlolCMPpXtvQshnRnz3Q35Jj4RYbeJyyEpTmyphq0MlqtrR90luKtMohfVYhuNxkyZHMGX3mYsDZlqPhdJYK9L3npSDA7I2H1XprGs4xwmPl1A02xfiTlq1ONX0uOxVv9eY-gc8uxDOjd2IC8dDEVqlmBV0hhQSLxQg5cieRc1e72dK-hZ9IDfcpqA"/>
+<!-- Location Pin Marker Overlay -->
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+<div class="bg-primary text-on-primary text-[11px] font-bold px-2 py-1 rounded shadow-md flex items-center gap-1 mb-1">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+<span>Kanke Dam Ward 4 (23.412° N, 85.321° E)</span>
+</div>
+<span class="material-symbols-outlined text-3xl text-error drop-shadow-md">location_on</span>
+</div>
+</div>
+</div>
+<!-- Step 4: Photo Capture & Submission Action -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="font-label-lg text-label-lg font-bold text-primary flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary text-xs flex items-center justify-center">4</span>
+<span>Evidence Photo</span>
+</label>
+<span class="text-xs text-on-surface-variant">JPG, PNG under 5MB</span>
+</div>
+<div class="flex items-center gap-3 mb-4">
+<button class="flex-1 min-h-[52px] rounded-lg border-2 border-dashed border-outline bg-surface hover:bg-surface-container-high flex items-center justify-center gap-2 text-primary font-bold active:scale-[0.99] transition-all">
+<span class="material-symbols-outlined text-2xl text-secondary">photo_camera</span>
+<span>Take Live Photo</span>
+</button>
+<button class="touch-target-min w-14 h-[52px] rounded-lg border-2 border-outline-variant bg-surface flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high" title="Upload from Device Gallery">
+<span class="material-symbols-outlined text-2xl">upload_file</span>
+</button>
+</div>
+<!-- Final Submit Button -->
+<button class="w-full min-h-[52px] bg-secondary text-on-secondary font-label-lg text-label-lg font-bold rounded-lg flex items-center justify-center gap-2 shadow-lg hover:bg-opacity-95 active:scale-[0.99] transition-transform">
+<span class="material-symbols-outlined text-2xl">send</span>
+<span>Submit Complaint (दर्ज करें)</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 6. Mobile Track Problem Card with Vertical 9-Step Progress Tracker -->
+<section class="px-gutter-mobile py-space-lg bg-surface-container-low border-b border-outline-variant" id="track-section">
+<div class="mb-space-md">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-xl">travel_explore</span>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider">Citizen Transparency Tracker</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold">Track Your Problem</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Enter registration ID sent via SMS</p>
+</div>
+<!-- Tracking Search Box -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl border-2 border-outline-variant shadow-sm mb-space-md">
+<label class="block font-label-md text-label-md font-bold text-primary mb-1">
+          Complaint Registration ID (शिकायत संख्या)
+        </label>
+<div class="flex gap-2">
+<input class="flex-1 h-[52px] px-3 rounded-lg border-2 border-primary font-mono text-body-md font-bold text-primary bg-surface-container-low focus:ring-4 focus:ring-primary-fixed" type="text" value="JC2C-2026-00125"/>
+<button class="touch-target-min px-4 bg-primary text-on-primary rounded-lg font-bold flex items-center justify-center gap-1 active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-xl">search</span>
+<span>Track</span>
+</button>
+</div>
+<div class="mt-2.5 flex items-center justify-between text-xs text-on-surface-variant">
+<span>District: Ranchi (Ward 12)</span>
+<span class="font-bold text-secondary">Estimated Resolution: 48 Hrs</span>
+</div>
+</div>
+<!-- Active Issue Summary Pill Card -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-outline-variant p-space-md shadow-sm mb-space-md">
+<div class="flex items-start justify-between gap-2 pb-3 border-b border-outline-variant">
+<div>
+<span class="px-2 py-0.5 rounded text-xs font-bold bg-secondary-fixed text-on-secondary-fixed">In Progress (सक्रिय प्रगति)</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold mt-1">Solar Water Pump Inverter Failure</h3>
+</div>
+<span class="text-xs font-mono text-outline font-semibold">Step 5 of 9</span>
+</div>
+<!-- Vertical 9-Step Progress Tracker -->
+<div class="mt-4 space-y-0 relative">
+<!-- Timeline Vertical Bar Line -->
+<div class="absolute left-[15px] top-3 bottom-3 w-0.5 bg-outline-variant"></div>
+<!-- Step 1: Registered (Completed) -->
+<div class="flex items-start gap-3 relative pb-4">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 z-10 ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="pt-0.5">
+<div class="font-label-md text-label-md font-bold text-primary">1. Grievance Lodged</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">12 May 2026, 09:15 AM - Automated SMS Sent</div>
+</div>
+</div>
+<!-- Step 2: Geo-Validation (Completed) -->
+<div class="flex items-start gap-3 relative pb-4">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 z-10 ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="pt-0.5">
+<div class="font-label-md text-label-md font-bold text-primary">2. Geotag &amp; Ward Validation</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Coordinates verified via Jharkhand GIS Engine</div>
+</div>
+</div>
+<!-- Step 3: Officer Assignment (Completed) -->
+<div class="flex items-start gap-3 relative pb-4">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 z-10 ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="pt-0.5">
+<div class="font-label-md text-label-md font-bold text-primary">3. Nodal Officer Assigned</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Assigned to Er. S. Soren, Drinking Water &amp; Sanitation</div>
+</div>
+</div>
+<!-- Step 4: Academic Solver Linked (Completed) -->
+<div class="flex items-start gap-3 relative pb-4">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 z-10 ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<div class="pt-0.5">
+<div class="font-label-md text-label-md font-bold text-primary">4. Campus Partner Enrolled</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">BIT Mesra Dept of EE Student Hackathon Team 04</div>
+</div>
+</div>
+<!-- Step 5: Field Inspection (Current Active) -->
+<div class="flex items-start gap-3 relative pb-4">
+<div class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center shrink-0 z-10 ring-4 ring-surface-container-lowest shadow-md">
+<span class="material-symbols-outlined text-lg animate-spin">autorenew</span>
+</div>
+<div class="pt-0.5 bg-surface-container p-2.5 rounded-lg border border-primary w-full">
+<div class="font-label-md text-label-md font-bold text-primary flex items-center justify-between">
+<span>5. On-Ground Prototype / Action</span>
+<span class="text-xs bg-primary text-white px-2 py-0.5 rounded font-mono">ACTIVE</span>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Inverter circuit board replaced with low-surge module.</div>
+</div>
+</div>
+<!-- Step 6: Department Verification (Upcoming) -->
+<div class="flex items-start gap-3 relative pb-4">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-outline flex items-center justify-center shrink-0 z-10 ring-4 ring-surface-container-lowest font-bold text-xs">
+              6
+            </div>
+<div class="pt-0.5 opacity-60">
+<div class="font-label-md text-label-md font-bold text-primary">6. Municipal Engineer Inspection</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Quality audit and telemetry check</div>
+</div>
+</div>
+<!-- Step 7: Citizen OTP Confirmation (Upcoming) -->
+<div class="flex items-start gap-3 relative pb-4">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-outline flex items-center justify-center shrink-0 z-10 ring-4 ring-surface-container-lowest font-bold text-xs">
+              7
+            </div>
+<div class="pt-0.5 opacity-60">
+<div class="font-label-md text-label-md font-bold text-primary">7. Resident Closure Verification</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Complainant OTP approval required for closure</div>
+</div>
+</div>
+<!-- Step 8: Academic Credit & Bounty (Upcoming) -->
+<div class="flex items-start gap-3 relative pb-4">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-outline flex items-center justify-center shrink-0 z-10 ring-4 ring-surface-container-lowest font-bold text-xs">
+              8
+            </div>
+<div class="pt-0.5 opacity-60">
+<div class="font-label-md text-label-md font-bold text-primary">8. University Credits Issued</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Higher Education Dept civic credits certified</div>
+</div>
+</div>
+<!-- Step 9: Final Archive & State Dashboard (Upcoming) -->
+<div class="flex items-start gap-3 relative">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-outline flex items-center justify-center shrink-0 z-10 ring-4 ring-surface-container-lowest font-bold text-xs">
+              9
+            </div>
+<div class="pt-0.5 opacity-60">
+<div class="font-label-md text-label-md font-bold text-primary">9. Archived to Open Data Portal</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Public repository update for community benefit</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Mobile Role Selector Tabs (Resident / University / Admin) -->
+<section class="px-gutter-mobile py-space-lg bg-surface-container-lowest border-b border-outline-variant">
+<div class="mb-space-sm text-center">
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Portals by Citizen Role</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Single-touch role switcher for targeted workflow</p>
+</div>
+<!-- Segmented Control Bar -->
+<div class="flex rounded-xl bg-surface-container-high p-1 border border-outline-variant mb-space-md" role="tablist">
+<button aria-selected="true" class="flex-1 py-2.5 rounded-lg bg-surface-container-lowest text-primary font-bold text-label-md shadow-sm border border-outline-variant flex items-center justify-center gap-1.5 touch-target-min" role="tab">
+<span class="material-symbols-outlined text-lg">home</span>
+<span>Resident</span>
+</button>
+<button aria-selected="false" class="flex-1 py-2.5 rounded-lg text-on-surface-variant font-semibold text-label-md hover:text-primary flex items-center justify-center gap-1.5 touch-target-min" role="tab">
+<span class="material-symbols-outlined text-lg">school</span>
+<span>University</span>
+</button>
+<button aria-selected="false" class="flex-1 py-2.5 rounded-lg text-on-surface-variant font-semibold text-label-md hover:text-primary flex items-center justify-center gap-1.5 touch-target-min" role="tab">
+<span class="material-symbols-outlined text-lg">admin_panel_settings</span>
+<span>Admin</span>
+</button>
+</div>
+<!-- Role Touch Card Details -->
+<div class="border-2 border-outline-variant rounded-xl p-space-md bg-surface space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed/50 text-secondary border border-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">person_pin</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Resident Dashboard</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Report issues, track street ward, verify works</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest border border-outline-variant">
+<span class="font-body-md text-body-md text-on-surface">Registered Mobile / Aadhaar</span>
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-lowest border border-outline-variant">
+<span class="font-body-md text-body-md text-on-surface">Subscribed Ward Notifications</span>
+<span class="text-xs bg-primary-container text-white px-2 py-1 rounded font-bold">Ward 14</span>
+</div>
+</div>
+<button class="w-full min-h-[48px] rounded-lg bg-primary text-on-primary font-bold flex items-center justify-center gap-2 hover:bg-opacity-95 active:scale-[0.99]">
+<span>Open Resident Portal (नागरिक डैशबोर्ड)</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- 8. University Problem Card Preview with 'Enroll to Solve' Action -->
+<section class="px-gutter-mobile py-space-lg bg-surface border-b border-outline-variant" id="solutions-section">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<span class="text-xs font-bold uppercase tracking-wider text-secondary">Academic Civic Tech</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Live Problem Challenge</h2>
+</div>
+<span class="px-2.5 py-1 rounded-full text-xs font-bold bg-secondary-fixed/60 text-on-secondary-fixed border border-secondary">
+          Academic Credits: +4
+        </span>
+</div>
+<!-- Problem Card for Student Innovators -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-outline-variant p-space-md shadow-sm space-y-3">
+<!-- Top Institutional Color Accent Band -->
+<div class="h-1.5 w-full bg-secondary rounded-full -mt-1 mb-2"></div>
+<div class="flex items-center justify-between text-xs text-on-surface-variant">
+<span class="font-bold text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">domain</span>
+            BIT Mesra / RU Cohort
+          </span>
+<span class="font-mono text-outline">Open for B.Tech / Poly</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">
+          IoT Low-Power Water Quality Sensor for Subarnarekha River Banks
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Design a solar-powered telemetric module to detect pH and turbidity levels in rural village intake wells, transmitting alerts via SMS without Wi-Fi.
+        </p>
+<!-- Meta Details Pill Grid -->
+<div class="grid grid-cols-2 gap-2 pt-1 text-xs">
+<div class="bg-surface-container-low p-2 rounded-lg border border-outline-variant">
+<span class="text-outline block">Department:</span>
+<span class="font-bold text-primary">Rural Water Mission</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg border border-outline-variant">
+<span class="text-outline block">Grant Support:</span>
+<span class="font-bold text-secondary">₹45,000 Prototype Fund</span>
+</div>
+</div>
+<!-- Action Area with Primary 'Enroll to Solve' Button -->
+<div class="pt-2">
+<button class="w-full min-h-[52px] bg-secondary text-on-secondary font-label-lg text-label-lg font-bold rounded-lg flex items-center justify-center gap-2 shadow hover:bg-opacity-95 active:scale-[0.99] transition-all">
+<span class="material-symbols-outlined text-2xl">handshake</span>
+<span>Enroll to Solve (समाधान हेतु जुड़ें)</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 9. Floating AI Assistant Trigger Icon ('Campus2Community Help') -->
+<aside class="fixed bottom-5 right-5 z-40 max-w-[440px]">
+<button aria-label="Open Campus2Community AI Help Assistant" class="touch-target-min px-4 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center gap-2 shadow-2xl border-2 border-secondary-fixed hover:bg-opacity-95 active:scale-95 transition-transform" id="ai-help-btn">
+<div class="relative">
+<span class="material-symbols-outlined text-2xl text-secondary-fixed">smart_toy</span>
+<span class="w-2.5 h-2.5 bg-secondary-fixed rounded-full absolute -top-1 -right-1 ring-2 ring-primary"></span>
+</div>
+<span class="tracking-wide">Campus2Community Help</span>
+</button>
+</aside>
+<!-- 10. Mobile-Optimized Institutional Footer -->
+<footer class="bg-primary text-surface-container-lowest px-gutter-mobile py-space-xl border-t-4 border-secondary flex flex-col gap-space-lg" id="about-section">
+<!-- Brand & Mission -->
+<div class="space-y-2">
+<div class="font-headline-sm text-headline-sm font-bold text-surface-container-lowest flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-2xl">account_balance</span>
+<span>Campus2Community Jharkhand</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-variant leading-relaxed">
+          झारखंड सरकार उच्च एवं तकनीकी शिक्षा विभाग और नगर विकास विभाग का संयुक्त नागरिक सहयोग उपक्रम।
+        </p>
+</div>
+<!-- Helpline Tap-to-Call Emergency Card -->
+<div class="bg-primary-container p-space-md rounded-xl border border-outline/40 space-y-2">
+<div class="font-label-md text-label-md font-bold text-secondary-fixed flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">support_agent</span>
+<span>24x7 Citizen Call Center</span>
+</div>
+<p class="text-xs text-surface-variant">Rural citizen helpline available in Hindi, Santali, Mundari, Ho, and Kurukh.</p>
+<a class="touch-target-min w-full min-h-[48px] bg-secondary text-white font-bold rounded-lg flex items-center justify-center gap-2 text-center shadow-md active:scale-95" href="tel:18003456541">
+<span class="material-symbols-outlined">call</span>
+<span>Call 1800-345-6541 (निःशुल्क टोल फ्री)</span>
+</a>
+</div>
+<!-- Single Column Institutional Policy Links (Exact labels from blueprint) -->
+<div class="flex flex-col gap-2.5 text-surface-variant font-label-sm text-label-sm border-y border-outline/30 py-4">
+<a class="underline hover:text-surface-container-lowest transition-colors touch-target-min flex items-center gap-2" href="#accessibility">
+<span class="material-symbols-outlined text-base">accessibility_new</span>
+<span>Accessibility Statement</span>
+</a>
+<a class="underline hover:text-surface-container-lowest transition-colors touch-target-min flex items-center gap-2" href="#terms">
+<span class="material-symbols-outlined text-base">gavel</span>
+<span>Terms of Civic Service</span>
+</a>
+<a class="underline hover:text-surface-container-lowest transition-colors touch-target-min flex items-center gap-2" href="#privacy">
+<span class="material-symbols-outlined text-base">security</span>
+<span>Privacy Policy</span>
+</a>
+<a class="underline hover:text-surface-container-lowest transition-colors touch-target-min flex items-center gap-2" href="#screen-reader">
+<span class="material-symbols-outlined text-base">record_voice_over</span>
+<span>Screen Reader Access</span>
+</a>
+<a class="underline hover:text-surface-container-lowest transition-colors touch-target-min flex items-center gap-2" href="#grievance">
+<span class="material-symbols-outlined text-base">supervised_user_circle</span>
+<span>Grievance Officer Portal</span>
+</a>
+<a class="underline hover:text-surface-container-lowest transition-colors touch-target-min flex items-center gap-2" href="#sitemap">
+<span class="material-symbols-outlined text-base">map</span>
+<span>Sitemap</span>
+</a>
+<a class="underline hover:text-surface-container-lowest transition-colors touch-target-min flex items-center gap-2" href="#higher-edu">
+<span class="material-symbols-outlined text-base">school</span>
+<span>Department of Higher Education</span>
+</a>
+</div>
+<!-- WCAG AAA and Copyright Declaration -->
+<div class="text-xs text-surface-variant leading-relaxed space-y-1">
+<div class="flex items-center gap-2 text-secondary-fixed font-bold">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span>WCAG 2.2 AAA &amp; Radical Legibility Certified</span>
+</div>
+<p class="opacity-90">
+          © 2025 Government of Jharkhand &amp; Campus2Community Civic Collaboration Initiative. Radical Legibility &amp; WCAG 2.2 AAA Compliant.
+        </p>
+</div>
+</footer>
+</div>
+<!-- Lightweight Vanilla JS for Interactions -->
+<script>
+    // Mobile Drawer Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const drawerMenu = document.getElementById('drawer-menu');
+
+    function toggleMenu() {
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      drawerMenu.classList.toggle('hidden');
+    }
+
+    menuBtn?.addEventListener('click', toggleMenu);
+    closeBtn?.addEventListener('click', toggleMenu);
+    drawerMenu?.addEventListener('click', (e) => {
+      if (e.target === drawerMenu) toggleMenu();
+    });
+
+    // High Contrast Simple Toggle Simulation
+    const contrastBtn = document.getElementById('contrast-btn');
+    contrastBtn?.addEventListener('click', () => {
+      document.body.classList.toggle('contrast-125');
+      document.body.classList.toggle('brightness-95');
+    });
+
+    // AI Help Assistant feedback toast
+    const aiHelpBtn = document.getElementById('ai-help-btn');
+    aiHelpBtn?.addEventListener('click', () => {
+      alert("Campus2Community AI Sahayak (झारखंड नागरिक सहायक) is ready to help you file a problem via voice or text.");
+    });
+  </script>
+</body></html>
